@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #header {
+        /* height: 200px; */
+        width: 1000px;
+        background-color: chartreuse;
+        /* 清除浮动 */
+        overflow: hidden;
+      }
+      #sub-header1 {
+        height: 100px;
+        width: 300px;
+        background-color: pink;
+        /* display: inline-block; */
+        float: left;
+      }
+      #sub-header2 {
+        height: 100px;
+        width: 500px;
+        background-color: deepskyblue;
+        /* display: inline-block; */
+        float: left;
+      }
+      li {
+        float: left;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header">
+      <div id="sub-header1">子盒子1</div>
+      <div id="sub-header2">子盒子2</div>
+    </div>
+    <div>
+      <ul>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+      </ul>
+    </div>
+  </body>
+</html>

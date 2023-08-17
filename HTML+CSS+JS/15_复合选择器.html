@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /*选择器优先级为 id选择器 > 类选择器 > 标签选择器*/
+      body {
+        background-color: pink;
+        color: green;
+      }
+      h1 {
+        text-align: center;
+      }
+      .book {
+        color: red;
+        font-size: 22px;
+      }
+      #art,
+      #mydiv {
+        font-size: 26px;
+      }
+      /*使用!important可以使优先级最高*/
+      li {
+        color: black;
+      }
+      /*后代选择器*/
+      #mydiv p {
+        background-color: aqua;
+      }
+      /*子代选择器*/
+      #mydiv > p {
+        font-style: italic;
+        text-decoration-line: underline;
+      }
+      a {
+        font-weight: 700;
+        font-size: 16px;
+        color: gray;
+      }
+      a:hover {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>好好学习天天向上</h1>
+    <!--类选择器不唯一，id选择器唯一-->
+    <ul>
+      <li class="book">经典</li>
+      <li id="art">文艺</li>
+      <li>科幻</li>
+    </ul>
+    <p>一小时学完css3</p>
+
+    <div id="mydiv">
+      <p>一小时学完H5</p>
+      <div>
+        <p>学完早点找工作</p>
+      </div>
+    </div>
+    <a>baidu</a>
+  </body>
+</html>

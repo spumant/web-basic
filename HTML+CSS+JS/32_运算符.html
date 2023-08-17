@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      console.log(1 + (2 * 3) / 2);
+      console.log(4 % 2);
+      console.log(5 % 3);
+
+      let num = 1;
+      num += 3;
+      console.log(num);
+
+      let i = 1;
+      ++i;
+      console.log(i);
+
+      let j = 1;
+      console.log(++j + 1);
+
+      let k = 1;
+      k++;
+      console.log(k);
+
+      let n = 1;
+      console.log(n++ + ++n + n);
+
+      console.log(3 > 5);
+      console.log(2 == 2);
+      // 比较运算符有隐式转换
+      console.log(2 == "2"); //true
+      // 全等判断值和数据类型都一样才行
+      console.log(2 === "2"); //false
+      console.log(2 !== "2"); //true
+      console.log(2 !== 2); //flase
+      console.log(NaN === NaN); //flase NAN不等于任何对象
+      console.log("-------------------------");
+      console.log("a" < "b"); // true
+      console.log("aa" < "ab"); // true
+      console.log("ab" < "aac"); // false
+
+      // 5-比较运算符
+      // 逻辑与 一假则假
+      console.log(true && true);
+      console.log(false && true);
+      console.log(3 < 5 && 3 < 2 && 5 > 1);
+      console.log("-----------------");
+      // 逻辑或 一真则真
+      console.log(false || false);
+      console.log(true || false);
+      console.log("-----------------");
+      // 逻辑非  取反
+      console.log(!true);
+      console.log(!false);
+      console.log("-----------------");
+    </script>
+  </body>
+</html>

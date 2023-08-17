@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let num1 = 3.5;
+      let num2 = 3;
+      console.log(typeof num1);
+      console.log(typeof num2);
+
+      let str1 = num1.toString();
+      let str2 = num2 + "";
+      console.log(typeof str1);
+      console.log(typeof str2);
+
+      //字符串转数字
+      let num3 = "100";
+      let num4 = Number(num3);
+      console.log(typeof num4);
+
+      let num5 = "100.12a";
+      let num6 = Number(num5);
+      console.log(num6);
+      console.log(typeof num6); //NAN 不是一个数字
+
+      //转换整数部分
+      let num7 = parseInt(num5);
+      console.log(num7);
+
+      let num8 = parseFloat(num5);
+      console.log(num8);
+
+      let bool1 = Boolean(0);
+      let bool2 = Boolean(null);
+      let bool3 = Boolean("");
+      let bool4 = Boolean(undefined);
+      let bool5 = Boolean(NaN);
+      console.log(bool1);
+      console.log(bool2);
+      console.log(bool3);
+      console.log(bool4);
+      console.log(bool5);
+
+      let bool6 = Boolean(1)
+      let bool7 = Boolean("abc")
+      console.log(bool6);
+      console.log(bool7);
+    </script>
+  </body>
+</html>

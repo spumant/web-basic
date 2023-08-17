@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      if (true) {
+        console.log("执行语句");
+      }
+      if (1 > 0) {
+        console.log("执行语句2");
+      } else {
+        console.log("执行语句3");
+      }
+
+      let num = 1 > 0 ? 100 : 90;
+      console.log(num);
+
+      //支持非布尔类型判断
+      if (undefined) {
+        console.log("执行语句4");
+      }
+
+      //2-多分支语句
+      let score = 75;
+      if (score < 0 || score > 100) {
+        console.log("你的成绩是错误的");
+      } else if (score >= 90 && score <= 100) {
+        console.log("你的成绩属于优秀");
+      } else if (score >= 80 && score < 90) {
+        console.log("你的成绩属于好");
+      } else if (score >= 70 && score < 80) {
+        console.log("你的成绩属于良");
+      } else if (score >= 60 && score < 70) {
+        console.log("你的成绩属于及格");
+      } else {
+        console.log("你的成绩属于不及格");
+      }
+
+      let level = "4";
+      switch (level) {
+        case 1:
+          console.log("优秀");
+          break;
+        case 2:
+          console.log("良好");
+          break;
+        case "3":
+          console.log("中等");
+          break;
+        case "4":
+          console.log("及格");
+          break;
+        default:
+          break;
+      }
+    </script>
+  </body>
+</html>

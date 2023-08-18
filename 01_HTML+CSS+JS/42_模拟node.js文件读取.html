@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <script>
+      function readFile(data, fn) {
+        setTimeout(function () {
+          if (data >= 0) {
+            data += 10;
+            fn(null, data);
+          } else {
+            fn({ mes: "服务器崩溃" }, undefined);
+          }
+        }, 3000);
+      }
+
+      readFile(-1, function (error, data) {
+        if (error) {
+          console.log(error);
+          console.log("数据读取失败" + data);
+        } else {
+          console.log("数据读取成功" + data);
+        }
+      });
+    </script>
+  </body>
+</html>

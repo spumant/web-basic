@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function Person(id, name) {
+        this.id = id;
+        this.name = name;
+        this.eat = function () {
+          console.log("吃饭");
+        };
+      }
+      function Teacher(edu) {
+        this.edu = edu;
+        this.teach = function () {
+          console.log("教师教书");
+        };
+      }
+      Teacher.prototype = new Person(1, "王强");
+      let teacher = new Teacher();
+
+      teacher.teach();
+      teacher.eat();
+    </script>
+  </body>
+</html>

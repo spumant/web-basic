@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let arr1 = new Array(3);
+      arr1[0] = 11;
+      arr1[1] = 22;
+      arr1[2] = 33;
+
+      for (let i = 0; i < arr1.length; i++) {
+        console.log(arr1[i]);
+      }
+
+      for (let arr1Ele of arr1) {
+        console.log(arr1Ele);
+      }
+
+      //动态数组
+      let arr2 = ["jack", "tony", "lucy"];
+      for (let name of arr2) {
+        console.log(name);
+      }
+
+      //尾插
+      let pushedLength = arr2.push("tom");
+      console.log(pushedLength);
+      console.log(arr2);
+
+      //头插
+      let unshiftLength = arr2.unshift("tom");
+      console.log(unshiftLength);
+      console.log(arr2);
+
+      //删除最后一个
+      console.log("-------------");
+      let popElement = arr2.pop();
+      console.log(popElement);
+      console.log(arr2);
+
+      //删除第一个
+      console.log("-------------");
+      let shiftElement = arr2.shift();
+      console.log(shiftElement);
+      console.log(arr2);
+
+      //splice-拼接:截取后原数组会发生该变
+      let nameList1 = ["a", "b", "c", "d"];
+      let arr1 = nameList1.splice(1, 2);
+      console.log(arr1);
+      console.log(nameList1);
+
+      //截取后替换
+      let nameList2 = ["a", "b", "c", "d"];
+      let arr2 = nameList2.splice(1, 1, "z");
+      console.log(arr2);
+      console.log(nameList2);
+
+      //新增
+      let nameList3 = ["a", "b", "c", "d"];
+      let arr3 = nameList3.splice(1, 0, "z");
+      console.log(arr3);
+      console.log(nameList3);
+
+      //slice-切片：截取后原数组不改变
+      let nameList4 = ["a", "b", "c", "d"];
+      let arr4 = nameList4.slice(1, 2);
+      console.log(arr4);
+      console.log(nameList4);
+    </script>
+  </body>
+</html>

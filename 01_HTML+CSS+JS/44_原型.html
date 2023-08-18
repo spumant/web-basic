@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function Student(id, name) {
+        this.id = id;
+        this.name = name;
+        this.sayHi = function () {
+          console.log("我叫" + this.name + "id是" + this.id);
+        };
+      }
+      let student3 = new Student(300, "ton");
+      // Student.prototype.count = 100;
+      // Student.prototype.study = function () {
+      //   console.log("共享学习空间");
+      // };
+      Student.prototype = {
+        count: 100,
+        study: function () {
+          console.log("共享学习空间");
+        },
+      };
+      console.log(student3.count);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function getStr(num, name) {
+        return num + "" + name;
+      }
+      // let str = getStr(1, "jack");
+      // console.log(str);
+
+      function getStr(num, name) {
+        for (let argument of arguments) {
+          console.log(argument);
+        }
+        return num + "" + name;
+      }
+      let str = getStr("1", "jack", "tony", 5);
+      console.log(str);
+    </script>
+  </body>
+</html>

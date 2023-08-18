@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //字符串转换成JSON对象
+      let str = '{"id":"1","name":"jack"}';
+      let jsonData = JSON.parse(str);
+      for (let key in jsonData) {
+        console.log(key + " " + jsonData[key]);
+      }
+      let strType = JSON.stringify(jsonData);
+      console.log(strType);
+    </script>
+  </body>
+</html>

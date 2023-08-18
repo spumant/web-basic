@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //方式1
+      let student1 = new Object();
+      student1.id = 100;
+      student1.name = "jack";
+      student1.sayHi = function () {
+        console.log("我叫" + student1.name + "id是" + student1.id);
+      };
+      console.log(student1.name);
+      student1.sayHi();
+
+      //方式2
+      let student2 = {
+        id: 200,
+        name: "tony",
+        sayHi: function () {
+          console.log("我叫" + student1.name + "id是" + student1.id);
+        },
+      };
+      console.log(student2.name);
+      student2.sayHi();
+
+      //方式3
+      function Student(id, name) {
+        this.id = id;
+        this.name = name;
+        this.sayHi = function () {
+          console.log("我叫" + this.name + "id是" + this.id);
+        };
+      }
+      let student3 = new Student(300, "ton");
+      
+    </script>
+  </body>
+</html>

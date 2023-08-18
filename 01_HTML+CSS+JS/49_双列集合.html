@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //双列集合-json对象数据
+      let map = { id: 1, name: "jack" };
+      for (let key in map) {
+        console.log(key + " " + map[key]);
+      }
+
+      let maps = [
+        { id: 1, name: "jack" },
+        { id: 2, name: "tony" },
+      ];
+      for (let map of maps) {
+        for (let key in map) {
+          console.log(key + " " + map[key]);
+        }
+      }
+      //实际上和对象的字面量是一样的
+      let stu = {
+        id: 200,
+        name: "tony",
+        sayHi: function () {
+          console.log("我叫" + this.name + ",id是" + this.id);
+        },
+      };
+      for (let stuKey in stu) {
+        console.log(stuKey + " " + stu[stuKey]);
+      }
+      console.log(stu.id + " " + stu.name + " " + stu.sayHi);
+      stu.sayHi();
+    </script>
+  </body>
+</html>

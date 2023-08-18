@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //JS数组-不需要定义类型
+      let array = [
+        11,
+        "jack",
+        null,
+        undefined,
+        new Object(),
+        function () {
+          console.log("haha");
+        },
+        [1, 2, 3],
+      ];
+      for (let item of array) {
+        console.log(typeof item + " " + item);
+        if (typeof item === "function") {
+          item();
+        }
+      }
+    </script>
+  </body>
+</html>

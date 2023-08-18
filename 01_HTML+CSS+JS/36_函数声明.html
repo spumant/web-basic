@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function sum(num1, num2) {
+        return num1 + num2;
+      }
+      let result1 = sum(1, 5);
+      console.log(result1);
+      let result2 = sum(1, "5");
+      console.log(result2);
+
+      // 预解析：把函数的声明提升到当前作用域的最前面，只会提升声明，不会提升调用
+      function sum(num1, num2) {
+        return num1 - num2;
+      }
+    </script>
+  </body>
+</html>

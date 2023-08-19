@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="button" value="事件参数e" id="btnEvent" />
+    <script>
+      let btnEvent = document.querySelector("#btnEvent");
+      btnEvent.onclick = f1;
+      btnEvent.onmouseover = f1;
+      btnEvent.onmouseout = f1;
+
+      function f1(e) {
+        console.log(e.type);
+        switch (e.type) {
+          case "click":
+            alert("好帅哦");
+            break;
+          case "mouseover":
+            this.style.background = "red";
+            break;
+          case "mouseout":
+            this.style.background = "green";
+            break;
+        }
+      }
+    </script>
+  </body>
+</html>

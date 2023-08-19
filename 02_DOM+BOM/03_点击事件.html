@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="button" value="控制台打印数据" id="btn" />
+    <script>
+      let arr = ["jack", "tom"];
+      document.querySelector("#btn").onclick = function () {
+        console.log(this);
+        for (let i = 0; i < arr.length; i++) {
+          console.log(i + "" + arr[i]);
+        }
+      };
+
+      for (let i = 0; i < arr.length; i++) {
+        document.querySelector("#btn").onclick = function () {
+          console.log(i + "" + arr[i]);
+        };
+      }
+    </script>
+  </body>
+</html>

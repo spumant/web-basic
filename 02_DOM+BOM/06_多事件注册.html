@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="button" value="绑定事件" id="btnAddEvent" />
+    <input type="button" value="解绑第一个事件" id="btnRemoveEvent" />
+    <script>
+      function f1() {
+        console.log("第一个事件");
+      }
+      function f2() {
+        console.log("第二个事件");
+      }
+      let btnAddEvent = document.querySelector("#btnAddEvent");
+      btnAddEvent.addEventListener("click", f1);
+      btnAddEvent.addEventListener("click", f2);
+      btnAddEvent.addEventListener("click", function () {
+        console.log("第三个事件");
+      });
+      document.querySelector("#btnRemoveEvent").onclick = function () {
+        btnAddEvent.removeEventListener("click", f1);
+      };
+    </script>
+  </body>
+</html>

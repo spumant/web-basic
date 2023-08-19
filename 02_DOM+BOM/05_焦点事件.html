@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      input {
+        color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" value="请输入搜索内容" id="txtSearch" />
+    <script>
+      let txtSearch = document.querySelector("#txtSearch");
+      txtSearch.onfocus = function () {
+        if (this.value == "请输入搜索内容") {
+          this.value = "";
+          this.style.color = "black";
+        }
+      };
+      txtSearch.onblur = function () {
+        if (this.value.length == 0) {
+          this.value = "请输入搜索内容";
+          this.style.color = "gray";
+        }
+      };
+    </script>
+  </body>
+</html>

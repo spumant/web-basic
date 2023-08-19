@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .mybody {
+        background-color: aliceblue;
+      }
+      .cls {
+        font-size: small;
+      }
+    </style>
+  </head>
+  <body class="mybody">
+    <input type="button" value="点击" id="btn" />
+    <div id="dv1" name="mydiv" class="cls">
+      <p>111</p>
+      <p>222</p>
+    </div>
+    <div id="dv2" name="mydiv" class="cls">
+      <p>333</p>
+      <p>444</p>
+    </div>
+    <div id="dv3">
+      <p>555</p>
+      <p>666</p>
+    </div>
+    <div id="dv4">
+      <a>链接1</a>
+      <a>链接2</a>
+      <p>
+        <a>链接3</a>
+      </p>
+    </div>
+    <div id="dv5">
+      <ul>
+        <li>张无忌</li>
+        <li>张三丰</li>
+        <li>牛魔王</li>
+        <li>郭靖</li>
+      </ul>
+    </div>
+    <script>
+      //1-id选择器
+      let btn = document.querySelector("#btn");
+      btn.value = "确定";
+      //2-标签选择器
+      for (let ele of document.querySelectorAll("div")) {
+        ele.style.background = "red";
+      }
+      //3-类选择器
+      for (let ele of document.querySelectorAll(".cls")) {
+        ele.style.fontsize = "x-large";
+      }
+      //4-后代选择器
+      for (let ele of document.querySelectorAll("#dv3 p")) {
+        ele.style.background = "blue";
+      }
+      //5-子代选择器
+      for (let ele of document.querySelectorAll("#dv4>a")) {
+        ele.style.color = "pink";
+      }
+      //6-结构选择器
+      document.querySelector("#dv5 ul li:first-child").innerHTML = "hello";
+      document.querySelector("#dv5 li:nth-child(3)").innerHTML = "红孩儿";
+    </script>
+  </body>
+</html>

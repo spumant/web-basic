@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .mybody {
+        background-color: aliceblue;
+      }
+      .cls {
+        font-size: small;
+      }
+    </style>
+  </head>
+  <body class="mybody">
+    <input type="button" value="点击" id="btn" />
+    <div id="dv1" name="mydiv" class="cls">
+      <p>111</p>
+      <p>222</p>
+    </div>
+    <div id="dv2" name="mydiv" class="cls">
+      <p>333</p>
+      <p>444</p>
+    </div>
+    <div id="dv3">
+      <p>555</p>
+      <p>666</p>
+    </div>
+    <script>
+      // 1-根据id获取元素
+      let btn = document.getElementById("btn");
+      console.log(btn);
+      console.dir(btn);
+      btn.value = "确认";
+
+      // 2-根据标签名获取元素
+      let eleDivs = document.getElementsByTagName("div");
+      console.log(eleDivs);
+      for (let eleDiv of eleDivs) {
+        eleDiv.style.background = "yellow";
+      }
+
+      // 3-根据name获取元素
+      let elementByName = document.getElementsByName("mydiv");
+      for (let i of elementByName) {
+        i.style.background = "pink";
+      }
+
+      // 4-根据类名获取元素
+      document.getElementsByClassName("mybody")[0].style.background = "blue";
+    </script>
+  </body>
+</html>

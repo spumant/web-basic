@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="button" value="获取本地存储数据" id="btn" />
+    <script>
+      window.onload = function () {
+        window.localStorage.setItem(
+          "student",
+          JSON.stringify({ id: 1, name: "jack" })
+        );
+      };
+      document.querySelector("#btn").onclick = function () {
+        let student = JSON.parse(localStorage.getItem("student"));
+        console.log(student);
+      };
+    </script>
+  </body>
+</html>

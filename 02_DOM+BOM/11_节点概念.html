@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="dv">
+      哦哦
+      <span>这是div中的第一个span标签</span>
+      <p>这是div中的第二个元素，第一个p标签</p>
+      <ul id="ulNames">
+        <li>乔峰</li>
+        <li>虚竹</li>
+        <li id="three">段誉</li>
+        <li>金轮法王</li>
+      </ul>
+    </div>
+    <script>
+      let ulNames = document.querySelector("#ulNames");
+      console.log(ulNames.childNodes);
+      console.log(ulNames.children);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="button" value="创建功夫列表" id="btn" />
+    <div id="dv"></div>
+    <script>
+      let kongfuList = ["九阳神功", "乾坤大挪移", "如来神掌"];
+      document.querySelector("#btn").onclick = function () {
+        let ulObj = document.createElement("ul");
+        for (let kongfu of kongfuList) {
+          let liObj = document.createElement("li");
+          liObj.innerText = kongfu;
+          liObj.onmouseover = mouseoverHandle;
+          liObj.onmouseout = mouseoutHandle;
+          ulObj.appendChild(liObj);
+        }
+        document.querySelector("#dv").appendChild(ulObj);
+      };
+      function mouseoverHandle() {
+        this.style.backgroundColor = "yellow";
+      }
+      function mouseoutHandle() {
+        this.style.backgroundColor = "";
+      }
+    </script>
+  </body>
+</html>

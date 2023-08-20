@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="button" value="变色" id="btn" />
+    <ul id="ulNames">
+      <li>乔峰</li>
+      <li>虚竹</li>
+      <li id="three">段誉</li>
+      <li>金轮法王</li>
+    </ul>
+    <script>
+      document.querySelector("#btn").onclick = function () {
+        let count = 1;
+        for (let child of document.querySelector("#ulNames").children) {
+          child.style.background = count % 2 == 0 ? "red" : "yellow";
+          count++;
+        }
+      };
+      //第二种方式
+      document.getElementById("btn").onclick = function () {
+        let count = 1;
+        for (let child of document.getElementById("ulNames").childNodes) {
+          if (child.nodeType == 1 && child.nodeName == "LI") {
+            child.style.backgroundColor = count % 2 == 0 ? "red" : "yellow";
+            count++;
+          }
+        }
+      };
+      //第三种方式
+      document.getElementById("btn").onclick = function () {
+        let count = 1;
+        for (let liELe of document.querySelectorAll("#ulNames>li")) {
+          liELe.style.backgroundColor = count % 2 == 0 ? "red" : "yellow";
+          count++;
+        }
+      };
+    </script>
+  </body>
+</html>

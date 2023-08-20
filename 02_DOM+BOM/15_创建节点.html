@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="button" value="创建一个p标签" id="btnAdd" />
+    <div id="dv"></div>
+    <script>
+      document.querySelector("#btnAdd").onclick = function () {
+        document.write("<p>这是一个p标签</p>");
+      };
+
+      document.querySelector("#btnAdd").onclick = function () {
+        document.querySelector("#dv").innerHTML = "<p>这是一个p标签</p>";
+      };
+
+      let tagP = document.createElement("p");
+      tagP.innerText = "这是一个p标签";
+      document.querySelector("#btnAdd").onclick = function () {
+        document.querySelector("#dv").appendChild(tagP);
+      };
+    </script>
+  </body>
+</html>

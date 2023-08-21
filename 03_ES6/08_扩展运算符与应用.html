@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+      let names1 = ["小王", "小强"];
+      console.log(names1);
+      console.log(...names1);
+
+      //1-数组合并
+      let names2 = ["小李", "小明"];
+      // let new_names = names1.concat(names2);
+      let new_names = [...names1, ...names2];
+      console.log(new_names);
+
+      //2-将伪数组转化为真正的数组
+      let divs = document.querySelectorAll("div");
+      console.log(divs);
+      let divArr = [...divs];
+      console.log(divArr);
+
+      //3-克隆数组
+      let numArr1 = [1, 2, 3];
+      let numArr2 = [...numArr1];
+      numArr2.push(4);
+      console.log(numArr1);
+    </script>
+  </body>
+</html>

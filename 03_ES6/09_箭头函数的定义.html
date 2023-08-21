@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let fun1 = function () {
+        console.log("helloworld");
+      };
+      let fun2 = () => console.log("helloworld");
+
+      let fun3 = function (str) {
+        return str.toUpperCase();
+      };
+      let fun4 = (str) => str.toUpperCase();
+      let res = fun4("hello");
+      console.log(res);
+
+      let fun5 = function (a, b) {
+        return a + b;
+      };
+      let fun6 = (a, b) => a + b;
+      let res2 = fun6(10, 20);
+      console.log(res2);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //1.数组的解构
+      const numList = [10, 20, 30];
+      let [num1, num2, num3] = numList;
+      console.log(num1);
+      console.log(num2);
+      console.log(num3);
+
+      //2.对象的解构
+      const student = {
+        name: "王小强",
+        eat: function () {
+          console.log("吃饭");
+        },
+      };
+      let { eat } = student;
+      eat();
+
+      //3-应用场景
+      function connect({ host, port }) {
+        console.log(host + ":" + port);
+      }
+      connect({
+        host: "127.0.0.1",
+        port: "3306",
+      });
+    </script>
+  </body>
+</html>

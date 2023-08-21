@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let persons = [
+        {
+          name: "刘德华",
+          age: 58,
+        },
+        {
+          name: "张学友",
+          age: 60,
+        },
+        {
+          name: "郭富城",
+          age: 54,
+        },
+        {
+          name: "黎明",
+          age: 54,
+        },
+      ];
+
+      persons.forEach((person) => console.log(person.name));
+      persons.forEach((person, index) =>
+        console.log(index + " " + person.name)
+      );
+
+      let personList1 = persons.filter((person) => person.age > 55);
+      console.log(personList1);
+
+      let personList2 = persons.map((person) => person.name + "的女人");
+      console.log(personList2);
+
+      let personList3 = persons
+        .filter((person) => person.age > 55)
+        .map((person) => person.name + "的女人");
+      console.log(personList3);
+
+      let flag1 = persons.every((person) => person.age > 55);
+      let flag2 = persons.some((person) => person.age > 55);
+      console.log(flag1);
+      console.log(flag2);
+
+      let findResult = person.find((person) => person.age == 54);
+      console.log(findResult);
+      let number = persons.findIndex((person) => person.age == 54);
+      console.log(number);
+
+      //删除，原数组会改变
+      //在什么位置删掉几个元素
+      persons.splice(number, 1);
+      console.log(persons);
+    </script>
+  </body>
+</html>

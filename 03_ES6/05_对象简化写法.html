@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let name = "jack";
+      let eat = function () {
+        console.log("吃饭");
+      };
+
+      const student1 = {
+        name: name,
+        eat: eat,
+        sayHello: function () {
+          console.log("hello world");
+        },
+      };
+
+      const student2 = {
+        name,
+        eat,
+        sayHello() {
+          console.log("hello world");
+        },
+      };
+    </script>
+  </body>
+</html>

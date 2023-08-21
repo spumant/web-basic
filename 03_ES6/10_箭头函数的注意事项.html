@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 200px;
+        height: 200px;
+        background: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="ad"></div>
+    <script>
+      //1.this是动态的，this对象可以赋值
+      function getName() {
+        console.log(this);
+      }
+      getName();
+      getName.call({});
+
+      //2. this是静态的，this始终指向函数声明时所在作用域下的this的值
+      let fun = () => {
+        console.log(this);
+      };
+      fun();
+      fun.call({});
+
+      document.querySelector("#ad").onclick = function () {
+        setTimeout(() => {
+          console.log(this);
+          this.style.background = "blue";
+        }, 1000);
+      };
+
+      //3.不能作为构造实例化对象
+      let Person = (name, age) => {
+        this.name = name;
+        this.age = age;
+      };
+      let me = new Person("xiao", 30);
+      console.log(me);
+
+      //3.不能使用arguments变量
+      let fn = () => {
+        console.log(arguments);
+      };
+    </script>
+  </body>
+</html>

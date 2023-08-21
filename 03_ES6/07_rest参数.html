@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //1-arguments
+      function fun1() {
+        console.log(arguments);
+      }
+      fun1("jack", "tom");
+
+      //rest 参数
+      function fun2(...args) {
+        console.log(args);
+        // args.push();
+        // args.filter();
+      }
+      fun2("jack", "tom");
+
+      //rest参数必须要放到参数最后
+      function fun3(a, b, ...args) {
+        console.log(a);
+        console.log(b);
+        console.log(args);
+      }
+      fun3(1, 2, 3, 4, 5, 6);
+    </script>
+  </body>
+</html>

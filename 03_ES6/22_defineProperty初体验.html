@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let student = {
+        id: 1,
+        name: "jack",
+        age: 18,
+      };
+      Object.defineProperty(student, "defineAge", {
+        enumerable:true,//控制属性是否可以枚举遍历，默认值是false
+        writable:true,//控制属性是否可以被修改
+        configurable:true,//控制属性是否可以被删除
+        value: 20,
+      });
+    </script>
+  </body>
+</html>

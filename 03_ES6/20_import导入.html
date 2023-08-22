@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script type="module">
+      import { name, eat } from "./JS/m1.js";
+      import { name as myname, sayHello } from "./JS/m2.js";
+
+      import m3 from "./JS/m3.js";
+
+      console.log(name);
+      console.log(eat());
+
+      console.log(myname);
+
+      console.log(m3.name);
+      console.log(m3.eat());
+    </script>
+  </body>
+</html>

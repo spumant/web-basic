@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let map = new Map();
+      map.set(1, "王强");
+      map.set(2, "陈小二");
+      map.set("城市", ["上海", "浙江"]);
+      console.log(map.size);
+      console.log(map.get("城市"));
+
+      map.delete(1);
+      map.forEach((value, key) => console.log(key + " " + value));
+    </script>
+  </body>
+</html>

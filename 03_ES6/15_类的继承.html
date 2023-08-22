@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Person {
+        static count = 0;
+
+        constructor(id, name) {
+          this.id = id;
+          this.name = name;
+        }
+
+        eat() {
+          console.log(this.name + "在吃饭");
+        }
+      }
+
+      class Teacher extends Person {
+        constructor(id, name, edu) {
+          super(id, name);
+          this.edu = edu;
+        }
+
+        eat() {
+          console.log("教师在吃饭");
+        }
+
+        teach() {
+          super.eat();
+          console.log("教师教书");
+        }
+      }
+
+      let teacher = new Teacher(1,'王强','博士')
+      teacher.eat()
+      teacher.teach()
+    </script>
+  </body>
+</html>

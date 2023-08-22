@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let _age = 20;
+      let student = {
+        id: 1,
+        name: "jack",
+      };
+      Object.defineProperty(student, "age", {
+        get() {
+          console.log("调用get方法");
+          return _age;
+        },
+        set(value) {
+          console.log("调用set方法");
+          _age = value;
+        },
+      });
+    </script>
+  </body>
+</html>

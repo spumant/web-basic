@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // let set = new Set();
+      // set.add("小王");
+      // set.add("小张");
+      // set.add("小王");
+      // set.add("小强");
+      let nameList = ["小王", "小张", "小王", "小强"];
+      let set = new Set(nameList);
+      console.log(set.size);
+      for (let name of set) {
+        console.log(name);
+      }
+
+      set.delete("小王");
+      for (let name of set) {
+        console.log(name);
+      }
+
+      let flag = set.has("小强");
+      console.log(flag);
+
+      set.clear();
+      console.log(set);
+
+      //集合的应用
+      let numArr1 = [1, 1, 2, 3, 4];
+      let numArr2 = [2, 2, 3, 4, 5];
+      //去重复数
+      console.log([...new Set(numArr1)]);
+      //交集
+      console.log(
+        [...new Set(numArr1)].filter((item) => new Set(numArr2).has(item))
+      );
+      //并集
+      let numbers2 = [...new Set([...numArr1,...numArr2])]
+      console.log(numbers2);
+    </script>
+  </body>
+</html>

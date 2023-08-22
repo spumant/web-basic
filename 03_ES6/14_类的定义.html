@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Person {
+        static count = 0;
+        set menu(dish) {
+          this.dishList.push(dish);
+        }
+
+        get menu() {
+          return this.dishList;
+        }
+
+        constructor(id, name) {
+          this.id = id;
+          this.name = name;
+          this.dishList = [];
+        }
+        eat() {
+          console.log(this.name + "在吃饭");
+        }
+      }
+
+      let person = new Person(1, "王小强");
+      console.log(person);
+      person.eat();
+      person.name = "小黑";
+      person.eat();
+
+      person.menu = "牛肉";
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body>
+    <div id="app">
+      <button @click="search">查询新闻信息</button>
+    </div>
+
+    <!-- 官网提供的 axios 在线地址 -->
+    <!--<script src="https://unpkg.com/axios/dist/axios.min.js"></script>-->
+    <script src="js/axios.js"></script>
+    <script src="js/vue.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        methods: {
+          search() {
+            //方式1
+            // axios({
+            //   method: "GET",
+            //   url: "http://localhost:3000/post",
+            // }).then((res) => {
+            //   console.log(res);
+            // });
+
+            //方式2-常用写法
+            axios.get("http://localhost:3000/post").then((res) => {
+              console.log(res);
+            });
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

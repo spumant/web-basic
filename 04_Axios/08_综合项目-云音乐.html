@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Document</title>
+    <!-- 样式 -->
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+<div class="wrap">
+    <div class="play_wrap" id="player">
+        <div class="search_bar">
+            <img src="images/player_title.png" alt=""/>
+            <!-- 搜索歌曲 -->
+            <input type="text" autocomplete="off"/>
+        </div>
+        <div class="center_con">
+            <!-- 搜索歌曲列表 -->
+            <div class='song_wrapper' ref='song_wrapper'>
+                <ul class="song_list">
+                    <li>
+                        <!-- 点击放歌 -->
+                        <a href="javascript:;"></a>
+                        <b>查询结果</b>
+                        <!-- 点击放MV,判断依据mvid!=0 -->
+                        <span>
+                <i></i>
+              </span>
+                    </li>
+                </ul>
+                <img src="images/line.png" class="switch_btn" alt="">
+            </div>
+            <!-- 歌曲黑胶碟片信息 -->
+            <div class="player_con playing">
+                <img src="images/player_bar.png" class="play_bar"/>
+                <!-- 黑胶碟片 -->
+                <img src="images/disc.png" class="disc autoRotate"/>
+                <img src="./images/cover.png" class="cover autoRotate"/>
+            </div>
+            <!-- 评论容器 -->
+            <div class="comment_wrapper" ref='comment_wrapper'>
+                <h5 class='title'>热门留言</h5>
+                <div class='comment_list'>
+                    <dl>
+                        <dt>
+                            <!-- user.avatarUrl 用户头像 -->
+                            <img src="" alt=""/>
+                        </dt>
+                        <!-- user.nickname 用户昵称 -->
+                        <dd class="name">小石头</dd>
+                        <!-- content 评论内容 -->
+                        <dd class="detail">
+                            一首不错的歌
+                        </dd>
+                    </dl>
+                </div>
+                <img src="images/line.png" class="right_line">
+            </div>
+        </div>
+        <div class="audio_con">
+            <audio ref='audio' src="" controls autoplay loop class="myaudio"></audio>
+        </div>
+        <div class="video_con" style="display: none">
+            <video ref='video' src="" controls="controls"></video>
+            <div class="mask"></div>
+        </div>
+    </div>
+</div>
+<script src="js/axios.js"></script>
+<script src="js/vue.js"></script>
+<script>
+  // 设置axios的基地址
+  axios.defaults.baseURL = 'https://autumnfish.cn';
+  // 实例化vue
+  var app = new Vue({
+    el: "#root",
+    data: {
+      // 搜索关键字
+      searchKeyWord: "",
+      // 歌曲列表
+      musicList: [],
+      // 歌曲url
+      musicUrl: '',
+      // 是否正在播放
+      isPlay: false,
+      // 歌曲热门评论
+      hotComments: [],
+      // 歌曲封面地址
+      coverUrl: '',
+      // 显示视频播放
+      showVideo: false,
+      // mv地址
+      mvUrl: ''
+    },
+    methods: {
+      //1-查询音乐列表 :    https://autumnfish.cn/search?keywords=XXX 响应数据：res.data.result.songs
+      //2-获取歌曲url :    https://autumnfish.cn/song/url?id=XXX     响应数据：res.data.data[0].url
+      //3-获取评论数据 :    https://autumnfish.cn/comment/hot?type=0&id=XXX     响应数据：res.data.hotComments
+      //4-获取歌曲封面url : https://autumnfish.cn/song/detail?ids=XXX     响应数据：res.data.songs[0].al.picUrl
+      //5-获取歌曲url :    https://autumnfish.cn/mv/url?id=XXX       响应数据：res.data.data.url;
+
+    }
+  });
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <button @click="search">查询新闻信息</button>
+    <ul>
+        <li v-for="item in postList" :key="item.id">
+            {{item.id}} {{item.title}} {{item.author}}
+        </li>
+    </ul>
+</div>
+
+<!-- 官网提供的 axios 在线地址 -->
+<!--<script src="https://unpkg.com/axios/dist/axios.min.js"></script>-->
+<script src="js/axios.js"></script>
+<script src="js/vue.js"></script>
+<script>
+    axios.defaults.baseURL = "http://localhost:3000"
+    new Vue({
+        el: "#app",
+        data:{
+          postList:[]
+        },
+        methods: {
+            search() {
+                // 异常处理方式-建议
+                axios.get("/post")
+                    .then(
+                        res => {
+                            console.log(res);
+                            this.postList = res.data;
+                        }
+                    )
+            }
+        }
+    })
+</script>
+</body>
+</html>

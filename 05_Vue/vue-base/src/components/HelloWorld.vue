@@ -3,7 +3,7 @@
     测试
   </div>
   <button :disabled="isButtonDisabled">Button</button>
-  <div v-bind="objectOfAttrs"></div>
+  <div v-bind="objectOfAttrs">测试2</div>
 </template>
 
 <script>
@@ -11,7 +11,7 @@ export default {
   data() {
     return {
       msg: "active",
-      isButtonDisabled: true,
+      isButtonDisabled: false,
       objectOfAttrs: {
         id: "aid",
         class: "alcass"

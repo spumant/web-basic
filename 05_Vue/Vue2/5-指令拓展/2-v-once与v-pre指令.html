@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>v-once指令</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+<!--
+    v-once指令：
+    1.v-once所在节点在初次动态渲染后，就视为静态内容了。
+    2.以后数据的改变不会引起v-once所在结构的更新，可以用于优化性能。
+
+    v-pre指令：
+    1.vue不在解析，会加快编译，一般用在无插值语法与指令语法的地方
+-->
+<div id="root">
+    <div><h2 >初始化的n值是:{{n}}</h2>
+        <h2>当前的n值是:{{n}}</h2>
+        <button @click="n++">点我n+1</button>
+    </div>
+	<div>
+		<h2 >Vue其实很简单</h2>
+		<h2 >当前的n值是:{{n}}</h2>
+		<button @click="n++">点我n+1</button>
+	</div>
+</div>
+</body>
+
+<script type="text/javascript">
+    new Vue({
+        el: '#root',
+        data: {
+            n: 1
+        }
+    })
+</script>
+</html>

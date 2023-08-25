@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+  </head>
+  <body>
+    <div id="root">
+      我叫{{name}},家住{{address}},就读{{school.name}}
+      <br />
+      <input type="text" :value="name" />
+      <br />
+      <input type="text" v-model:value="name" />
+      <br />
+
+      性别： 男<input type="radio" name="sex" value="0" v-model="sex" />
+      女<input type="radio" name="sex" value="1" v-model="sex" /> <br /><br />
+
+      爱好： 学习<input type="checkbox" value="study" v-model="hobby" />
+
+      打游戏<input type="checkbox" value="game" v-model="hobby" />
+
+      吃饭<input type="checkbox" value="eat" v-model="hobby" /> <br /><br />
+
+      <input type="checkbox" v-model="agree" />统一并接受 <br /><br />
+      所属校区
+      <select v-mdoel="city">
+        <option value="">请选择校区</option>
+        <option value="beijing">北京</option>
+        <option value="shanghai">上海</option>
+        <option value="shenzhen">深圳</option>
+        <option value="wuhan">武汉</option>
+      </select>
+    </div>
+
+    <script type="text/javascript">
+      new Vue({
+        el: "#root",
+        data: {
+          name: "jack",
+          address: "浙江义乌",
+          school: {
+            name: "义乌一中",
+          },
+          sex: "1",
+          hobby: [],
+          agree: true,
+          city: "",
+        },
+      });
+    </script>
+  </body>
+</html>

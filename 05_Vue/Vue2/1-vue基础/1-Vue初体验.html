@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+<div id="root">
+    我叫{{name.toUpperCase()}},家住{{address}}
+    <br>
+    就读与{{school.name}}
+    <br>
+    {{1 + 1}} {{1 > 2}}
+</div>
+<div>
+    {{name}}
+</div>
+<script type="text/javascript">
+    const vm = new Vue({
+        // el: "#root",
+        data: {
+            name: "jack",
+            address: "浙江义乌",
+            school: {
+                name: "义乌一中"
+            }
+        }
+    });
+    setTimeout(function () {
+        vm.$mount("#root");
+    },2000);
+</script>
+</body>
+</html>

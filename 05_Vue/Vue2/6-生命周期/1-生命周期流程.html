@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>分析生命周期</title>
+		<script type="text/javascript" src="../js/vue.js"></script>
+	</head>
+	<body>
+		<div id="root" >
+			姓名:{{name}},n的值{{n}}
+			<br><br>
+			<button @click="n++">点我n+1</button>
+			<br><br>
+			<button @click="bye">点我销毁vm</button>
+		</div>
+	</body>
+
+	<script type="text/javascript">
+		new Vue({
+			el:'#root',
+			data:{
+				name:"jack",
+				n:1
+			},
+			methods: {
+				bye(){
+					console.log('bye');
+					this.$destroy();
+				}
+			},
+			beforeCreate() {
+				console.log('------beforeCreate阶段-data无数据------');
+				console.log(this._data);
+			},
+			created() {
+				console.log('------created阶段-data有数据------');
+				console.log(this._data);
+			},
+			beforeMount() {
+				console.log('------beforeMount阶段-DOM未呈现------');
+			},
+			mounted() {
+				console.log('------mounted阶段-呈现DOM结构----');
+				this.timer = setTimeout(() => {
+					console.log('setTimeout')
+				},2000);
+			},
+			beforeUpdate() {
+				console.log('------beforeUpdate阶段-数据与页面不一致');
+				console.log(this._data);
+			},
+			updated() {
+				console.log('------updated-数据与页面保持一致');
+				console.log(this._data);
+			},
+			beforeDestroy() {
+				console.log('-------beforeDestroy-----------');
+				clearInterval(this.timer);
+			},
+			destroyed() {
+				console.log('--------destroyed-------------');
+			},
+		})
+	</script>
+</html>

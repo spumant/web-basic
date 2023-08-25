@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>折扣平均单价案例_methods实现</title>
+		<script type="text/javascript" src="../js/vue.js"></script>
+	</head>
+	<body>
+		<div id="root">
+			总价：<input type="text" v-model="totalPrice"> <br/>
+			数量：<input type="text" v-model="amount"> <br/>
+			折扣：<input type="text" v-model="discount">折<br/>
+		</div>
+	</body>
+
+	<script type="text/javascript">
+		let vm = new Vue({
+			el:'#root',
+			data:{
+				totalPrice:300,
+				amount:10,
+				discount:7
+			},
+		});
+	</script>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>事件应用</title>
+    <!-- 引入Vue -->
+    <script type="text/javascript" src="../js/vue.js"></script>
+  </head>
+  <body>
+    <div id="root">
+      <h2>我是{{name}},今天我很{{ happy ? "高兴" : "难过" }}</h2>
+      <button v-on:click="sayHi">打招呼1</button>
+
+      <br />
+
+      <button @click="sayAge(20,'hello')">打招呼2</button>
+
+      <br />
+
+      <button @click="changeMood">改变心情</button>
+
+      <br />
+
+      <button @click="happy = !happy">改变心情</button>
+
+      {{getMsg()}}
+    </div>
+    <script>
+      const vm = new Vue({
+        el: "#root",
+        data: {
+          happy: true,
+          name: "jack",
+        },
+        methods: {
+          sayHi() {
+            alert("同学你好，我是" + this.name);
+          },
+          sayAge(age, str) {
+            alert(`同学你好，我是${this.name},今年${age}岁，${str}`);
+          },
+          changeMood() {
+            this.happy = !this.happy;
+          },
+          getMsg() {
+            return this.name + "很高兴";
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

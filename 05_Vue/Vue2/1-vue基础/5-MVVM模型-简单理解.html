@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+<div id="root">
+    {{id}}-{{name}}
+    <br>
+    {{_data.id}}-{{_data.name}}
+    <br>
+    {{$el.innerHTML}}
+</div>
+<script>
+    let vm = new Vue({
+        el: "#root",
+        data: {
+            id: 1,
+            name: "jack"
+        }
+    });
+</script>
+</body>
+</html>

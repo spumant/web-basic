@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>事件应用</title>
+    <!-- 引入Vue -->
+    <script type="text/javascript" src="../js/vue.js"></script>
+  </head>
+  <body>
+    <div id="root">
+      <!--
+        1.Vue中常用的按键别名：回车 => enter 删除 => delete (捕获“删除”和“退格”键)
+                           退出 => esc   空格 => space  换行 => tab
+                           上 下 左 右 => up down left right
+    -->
+      <input
+        type="text"
+        placeholder="按下任意键键触发-keydown"
+        @keydown="showInfo"
+      /><br />
+      <input
+        type="text"
+        placeholder="按下回车键触发-keydown"
+        @keydown.enter="showInfo"
+      /><br />
+      <input type="text" placeholder="按下空格键回弹后触发-keyup" /><br />
+      <input type="checkbox" />
+      <input type="button" value="测试鼠标事件" />
+    </div>
+    <script>
+      new Vue({
+        el: "#root",
+        methods: {
+          showInfo(e) {
+            console.log(e.key, e.keyCode);
+          },
+          testChange() {
+            console.log("改变事件被触发");
+          },
+          testMouseover() {
+            console.log("鼠标事件被触发");
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

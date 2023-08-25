@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>基本列表</title>
+		<script type="text/javascript" src="../js/vue.js"></script>
+	</head>
+	<body>
+		<!-- 准备好一个容器-->
+		<div id="root">
+			<button @click="update">更新学生信息</button>
+			<!-- 遍历数组 -->
+			<h2>学生列表（遍历数组）</h2>
+			<ul>
+				<li v-for="(item,index) in studentList" :key="item.id">
+					{{index}}-{{item.id}}-{{item.name}}-{{item.age}}
+				</li>
+			</ul>
+		</div>
+
+		<script type="text/javascript">
+			let vm = new Vue({
+				el:'#root',
+				data:{
+					studentList:[
+						{id:'001',name:'张三',age:22},
+						{id:'002',name:'李四',age:19},
+						{id:'003',name:'王五',age:20}
+					]
+				},
+				methods:{
+					update(){
+						this.studentList[0] = {id:'001',name:'赵六',age:33};
+					}
+				}
+			});
+		</script>
+	</body>
+</html>

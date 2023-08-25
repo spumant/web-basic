@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Template • TodoMVC</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+<section class="todoapp">
+    <header class="header">
+        <h1>todos</h1>
+        <input class="new-todo" placeholder="输入需要完成的任务?" autofocus>
+    </header>
+    <!-- todos 数组列表为空时 隐藏section -->
+    <section class="main">
+        <input id="toggle-all" class="toggle-all" type="checkbox">
+        <label for="toggle-all">Mark all as complete</label>
+        <ul class="todo-list">
+            <!-- `editing` 为编辑样式 ，`completed` 为已完成样式 -->
+            <li class="completed">
+                <div class="view">
+                    <input class="toggle" type="checkbox" >
+                    <label>学习ES6</label>
+                    <button class="destroy"></button>
+                </div>
+                <input class="edit" value="编辑任务信息">
+            </li>
+            <li>
+                <div class="view">
+                    <input class="toggle" type="checkbox" checked>
+                    <label>学习JKD8</label>
+                    <button class="destroy"></button>
+                </div>
+                <input class="edit" value="编辑任务信息">
+            </li>
+            <li class="editing">
+                <div class="view">
+                    <input class="toggle" type="checkbox" checked>
+                    <label>学习JS基础</label>
+                    <button class="destroy"></button>
+                </div>
+                <input class="edit" value="编辑任务信息">
+            </li>
+        </ul>
+    </section>
+    <!-- todos 数组列表为空时 隐藏footer -->
+    <footer class="footer">
+        <span class="todo-count"><strong>0</strong>项剩余</span>
+        <ul class="filters">
+            <li>
+                <a class="selected" href="#/">所有</a>
+            </li>
+            <li>
+                <a href="#/active">未完成</a>
+            </li>
+            <li>
+                <a href="#/completed">已完成</a>
+            </li>
+        </ul>
+        <!-- 当未完成项为0时隐藏 ↓ -->
+        <button class="clear-completed">清空已完成项</button>
+    </footer>
+</section>
+<footer class="info">
+    <p><a href="http://todomvc.com">TodoMVC</a></p>
+</footer>
+
+</body>
+
+</html>

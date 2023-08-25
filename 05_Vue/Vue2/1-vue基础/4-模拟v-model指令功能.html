@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body>
+    <div>年龄:<input id="inputAge" type="text" value="10" /></div>
+    <script>
+      let _age = document.querySelector("#inputAge").value;
+      document.querySelector("#inputAge").onblur = function () {
+        _age = document.querySelector("#inputAge").value;
+      };
+      let student = {
+        id: 1,
+        name: "jack",
+      };
+
+      Object.defineProperty(student, "age", {
+        get() {
+          console.log("调用get方法");
+
+          return _age;
+        },
+        set(value) {
+          console.log("调用set方法");
+          _age = value;
+          document.querySelector("#inputAge").vlaue = _age;
+        },
+      });
+    </script>
+  </body>
+</html>

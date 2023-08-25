@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+<div id="root">
+    编号：{{id}}，<br>
+    姓名列表：{{nameList}},<br>
+    城市{{address}}
+</div>
+<script>
+    let vm = new Vue({
+        el: "#root",
+        data: {
+            id: 1,
+            nameList: ["jack", "tom", "tony"],
+            address: [
+                {city: '上海', code: '10001'},
+                {name: '北京', code: '10002'}
+            ]
+        }
+    });
+
+</script>
+</body>
+</html>

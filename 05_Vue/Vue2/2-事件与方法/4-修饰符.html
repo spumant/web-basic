@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件应用</title>
+    <!-- 引入Vue -->
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+<div id="root">
+    <!-- 阻止默认事件-->
+    <a href="http://www.baidu.com" @click="showInfo">提示信息并跳转页面</a><br>
+    <a href="http://www.baidu.com" >提示信息不跳转页面</a><br>
+    <a href="#" >提示一次信息并跳转页面</a><br>
+    <br>
+    性别：
+    男<input type="radio" name="sex" v-model="sex" value="0">
+    女<input type="radio" name="sex" v-model="sex" value="1">
+    <br/><br/>
+    备注信息：
+    <textarea v-model="remark"></textarea>
+</div>
+<script>
+    new Vue({
+        el: '#root',
+        data:{
+            sex:1,
+            remark:""
+        },
+        methods: {
+            showInfo() {
+                alert("hello");
+            }
+        }
+    })
+
+</script>
+</body>
+</html>

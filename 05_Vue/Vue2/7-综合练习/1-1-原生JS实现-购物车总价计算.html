@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <div>
+    <label for="">商品价格</label>
+    <input type="number" id="inputUnitPrice" value="5">
+  </div>
+  <div>
+    <label for="">商品数量</label>
+    <button id="btnSub">-</button><span id="spanAmount">2</span>
+    <button id="btnAdd" >+</button>
+  </div>
+  <div>
+    总价格：<strong><span id="spanTotalPrice">10</span></strong>
+  </div>
+</div>
+<script>
+  let inputUnitPrice = document.querySelector("#inputUnitPrice");
+  let spanAmount = document.querySelector("#spanAmount");
+  let spanTotalPrice = document.querySelector("#spanTotalPrice");
+  let btnSub = document.querySelector("#btnSub");
+  let btnAdd = document.querySelector("#btnAdd");
+
+
+  btnAdd.onclick = function () {
+    let unitPrice = inputUnitPrice.value;
+    let amount = spanAmount.innerText;
+    amount++;
+    spanAmount.innerText = amount;
+    spanTotalPrice.innerText =  amount * unitPrice;
+  }
+  btnSub.onclick = function () {
+    let unitPrice = inputUnitPrice.value;
+    let amount = spanAmount.innerText;
+    amount = --amount >= 0 ? amount:0;
+    spanAmount.innerText = amount;
+    spanTotalPrice.innerText =  amount * unitPrice;
+  }
+  inputUnitPrice.oninput = function () {
+    let unitPrice = inputUnitPrice.value >= 0 ? inputUnitPrice.value : 0;
+    inputUnitPrice.value = unitPrice;
+    let amount = spanAmount.innerText;
+    spanTotalPrice.innerText =  amount * unitPrice;
+  }
+
+</script>
+</body>
+</html>

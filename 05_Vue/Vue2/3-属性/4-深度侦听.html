@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件应用</title>
+    <!-- 引入Vue -->
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+<div id="root">
+    <h2>我是{{name}},今天我很{{ happy ? "高兴" : "难过" }}</h2>
+    <button @click="changeMood">改变心情</button>
+    <br>
+    <button @click="numbers.y++">y++</button>
+</div>
+<script>
+    const vm = new Vue({
+        el: '#root',
+        data: {
+            happy: true,
+            name: "jack",
+            numbers: {
+                x: 1,
+                y: 1
+            }
+        },
+        methods: {
+            changeMood() {
+                this.happy = !this.happy;
+            }
+        },
+        watch: {
+            happy: {
+                immediate: true,
+                handler(newValue, oldValue) {
+                    console.log('happy属性被修改了', newValue, oldValue)
+                }
+            },
+        }
+    })
+
+</script>
+</body>
+</html>

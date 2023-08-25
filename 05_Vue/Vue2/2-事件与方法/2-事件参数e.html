@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>事件应用</title>
+    <!-- 引入Vue -->
+    <script type="text/javascript" src="../js/vue.js"></script>
+  </head>
+  <body>
+    <div id="root">
+      <h2>我是{{name}},今天我很{{ happy?"高兴":"难过" }}</h2>
+      <button @click="sayHi">打招呼</button>
+      <button @click="sayAge(20,$event)">打招呼</button>
+    </div>
+    <script>
+      const vm = new Vue({
+        el: "#root",
+        data: {
+          happy: true,
+          name: "jack",
+        },
+        methods: {
+          sayHi(e) {
+            console.log(e);
+            console.log(e.target);
+            e.target.innerText = this.name + "打招呼";
+            e.target.style.background = "red";
+          },
+          sayAge(age, e) {
+            console.log(e);
+            alert(`同学你好，我是${this.name},今年${age}岁`);
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

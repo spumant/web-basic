@@ -30,7 +30,8 @@
 				},
 				methods:{
 					update(){
-						this.studentList[0] = {id:'001',name:'赵六',age:33};
+						// this.studentList[0] = {id:'001',name:'赵六',age:33};
+						this.studentList.splice(0,1,{id:"001",name:"赵六",age:33})
 					}
 				}
 			});

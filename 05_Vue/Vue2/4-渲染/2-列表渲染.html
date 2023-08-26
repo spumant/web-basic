@@ -10,8 +10,23 @@
 			<!-- 遍历数组 -->
 			<h2>学生列表（遍历数组）</h2>
 			<ul>
-				<li>
-
+				<li v-for="item in studentList">
+					{{item.id}}-{{item.name}}-{{item.age}}
+				</li>
+			</ul>
+			<ul>
+				<li v-for="(item,index) in studentList" :key="item.id">
+					{{index}}-{{item.id}}-{{item.name}}-{{item.age}}
+				</li>
+			</ul>
+			<ul>
+				<li v-for="(item,index) in studentResult" :key="item.id">
+					{{index}}-{{item.id}}-{{item.name}}-{{item.age}}
+				</li>
+			</ul>
+			<ul>
+				<li v-for="(value,key) of teacher" :key="key">
+					{{key}}-{{value}}
 				</li>
 			</ul>
 		</div>

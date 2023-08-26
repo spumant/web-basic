@@ -11,11 +11,18 @@
     <button @click="n++">点我n+1</button>
     <!--    特点：不展示的DOM元素未被移除，仅仅是使用样式隐藏掉-->
     <!--    适用于：切换频率较高的场景。-->
-
+    <h2 v-show="false">欢迎来到{{name}}</h2>
+    <h2 v-show="n%2===0">{{name}}</h2>
 
     <!--	适用于：切换频率较低的场景。-->
     <!--	特点：不展示的DOM元素直接被移除。-->
-
+    <h2 v-if="false">{{name}}</h2>
+    <h2 v-if="n%2===0">{{name}}</h2>
+    <!--  v-if可以和v-else-if、v-else一起使用，但要求结构不能被打断  -->
+    <div v-if="n === 1">jack</div>
+    <div v-else-if="n === 2">tom</div>
+    <div v-else-if="n === 3">tony</div>
+    <div v-else>andy</div>
     </template>
 </div>
 </body>

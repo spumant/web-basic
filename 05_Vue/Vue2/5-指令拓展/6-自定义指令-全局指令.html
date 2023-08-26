@@ -11,18 +11,22 @@
 </div>
 </body>
 <script type="text/javascript">
+    Vue.directive('text-pro', function (element, binding) {
+        element.innerText = '$' + binding.value + '$'
+        element.style.background = 'red'
+    })
     new Vue({
         el: '#root1',
         data: {
             name: "jack",
             n: 1
         },
-        directives: {
-            'text-pro'(element, binding) {
-                element.innerText = "$" + binding.value + "$";
-                element.style.background = "red";
-            }
-        }
+        // directives: {
+        //     'text-pro'(element, binding) {
+        //         element.innerText = "$" + binding.value + "$";
+        //         element.style.background = "red";
+        //     }
+        // }
     })
 
 </script>

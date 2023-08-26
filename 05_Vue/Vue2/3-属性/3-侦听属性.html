@@ -25,7 +25,29 @@
                 this.happy = !this.happy;
             }
         },
+        // watch: {
+        //     happy: {
+        //         immediate: true,  //初始化时即启动
+        //         handler(newValue, oldValue) {
+        //             console.log('happy的属性被修改了', newValue, oldValue)
+        //         }
+        //     }
+        // }
+        // watch: {
+        //     happy(val) {
+        //         console.log('happy的属性被修改了', val)
+        //     }
+        // }
     });
+    // vm.$watch("happy", function (val) {
+    //     console.log('happy的属性被修改了', val)
+    // })
+    vm.$watch("happy", {
+        immediate: true,  //初始化时即启动
+        handler(newValue, oldValue) {
+            console.log('happy的属性被修改了', newValue, oldValue)
+        }
+    })
 </script>
 </body>
 </html>

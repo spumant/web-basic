@@ -15,13 +15,13 @@
     1.vue不在解析，会加快编译，一般用在无插值语法与指令语法的地方
 -->
 <div id="root">
-    <div><h2 >初始化的n值是:{{n}}</h2>
+    <div><h2 v-once="n">初始化的n值是:{{n}}</h2>
         <h2>当前的n值是:{{n}}</h2>
         <button @click="n++">点我n+1</button>
     </div>
 	<div>
-		<h2 >Vue其实很简单</h2>
-		<h2 >当前的n值是:{{n}}</h2>
+		<h2 v-pre>Vue其实很简单</h2>
+		<h2 v-pre>当前的n值是:{{n}}</h2>
 		<button @click="n++">点我n+1</button>
 	</div>
 </div>

@@ -1,31 +1,36 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8" />
-		<title>折扣平均单价案例_watch实现</title>
-		<script type="text/javascript" src="../js/vue.js"></script>
-	</head>
-	<body>
-		<div id="root">
-			总价：<input type="text" v-model="totalPrice"> <br/>
-			数量：<input type="text" v-model="amount"> <br/>
-			折扣：<input type="text" v-model="discount">折<br/>
-			折扣平均单价：<span>{{avgPrice}}</span>
-		</div>
-	</body>
+<head>
+    <meta charset="UTF-8"/>
+    <title>折扣平均单价案例_watch实现</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+<div id="root">
+    总价：<input type="text" v-model="totalPrice"> <br/>
+    数量：<input type="text" v-model="amount"> <br/>
+    折扣：<input type="text" v-model="discount">折<br/>
+    折扣平均单价：<span>{{avgPrice}}</span>
+</div>
+</body>
 
-	<script type="text/javascript">
-		new Vue({
-			el:'#root',
-			data:{
-				totalPrice:300,
-				amount:10,
-				discount:7,
-				avgPrice:21
-			},
-			watch:{
-
-			}
-		})
-	</script>
+<script type="text/javascript">
+    new Vue({
+        el: '#root',
+        data: {
+            totalPrice: 300,
+            amount: 10,
+            discount: 7,
+            avgPrice: 21
+        },
+        watch: {
+            totalPrice(val) {
+                setTimeout(() => {
+                    console.log(this)
+                    this.avgPrice = (val / this.amount) * (this.discount / 10)
+                }, 2000)
+            }
+        }
+    })
+</script>
 </html>

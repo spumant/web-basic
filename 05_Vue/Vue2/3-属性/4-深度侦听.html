@@ -36,6 +36,17 @@
                     console.log('happy属性被修改了', newValue, oldValue)
                 }
             },
+            // "numbers.y": {
+            //     handler(newValue, oldValue) {
+            //         console.log('numbers.y属性被修改了', newValue, oldValue)
+            //     }
+            // }
+            number: {
+                deep: true,
+                handler(newValue, oldValue) {
+                    console.log("属性被修改了", newValue.y, oldValue.y)
+                }
+            }
         }
     })
 

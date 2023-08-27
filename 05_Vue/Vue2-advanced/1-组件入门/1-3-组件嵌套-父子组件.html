@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <style>
+        .school-style {
+            background-color: #5bc0de;
+        }
+
+        .student-style {
+            background-color: pink;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+<div id="root">
+    <School></School>
+</div>
+<script type="text/javascript">
+    const Student = {
+        name: "Student",
+        template: `
+          <div class="student-style">
+            <h2>学生姓名：{{ studentName }}</h2>
+            <h2>学生年龄：{{ age }}</h2>
+          </div>
+        `,
+        data() {
+            return {
+                studentName: "张三",
+                age: 18,
+            }
+        }
+    }
+
+    //完成School组件
+    const School = Vue.extend({
+        name: "School",
+        components: {
+            Student
+        },
+        template: `
+          <div class="school-style">
+            <h2>学校名称：{{ schoolName }}</h2>
+            <h2>学校地址：{{ address }}</h2>
+            <button @click="changeSchoolName">改变学校名称</button>
+            <Student></Student>
+          </div>
+        `,
+        data() {
+            return {
+                schoolName: "浙江大学",
+                address: "杭州紫金港",
+            }
+        },
+        methods: {
+            changeSchoolName() {
+                this.schoolName = "浙江大学软件学院"
+            }
+        }
+    });
+
+    let vm = new Vue({
+        el: '#root',
+        components: {
+            School
+        }
+    });
+</script>
+</body>
+</html>
